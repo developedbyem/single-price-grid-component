@@ -1,0 +1,240 @@
+@import url("https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap");
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+h1,
+h2,
+h3 {
+  line-height: 1.1;
+}
+
+#root,
+#__next {
+  isolation: isolate;
+}
+
+:root {
+  --clr-cyan: hsl(179, 62%, 43%);
+  --clr-yellow: hsl(71, 73%, 54%);
+  --clr-neutral-gray-100: hsl(204, 43%, 93%);
+  --clr-neutral-blue-200: hsl(217, 22%, 67%);
+
+  --font-size-basic: 1rem;
+  --font-karla: "Karla", sans-serif; /* 400,700 */
+}
+/* ------------------------ */
+
+body {
+  font-size: var(--font-size-basic);
+  font-family: var(--font-karla);
+  background-color: var(--clr-neutral-gray-100);
+  font-weight: 400;
+}
+main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-block: 4.5rem 4.8rem;
+  flex: 1;
+  min-height: 100vh;
+}
+
+.price-component {
+  width: 83%;
+  max-width: 470px;
+  border-radius: 0.3rem;
+  overflow: hidden;
+  box-shadow: 0 15px 30px rgba(152, 166, 189, 50%);
+}
+
+.container {
+  display: grid;
+  grid-template-rows: auto 1fr 0.9fr;
+}
+
+@media screen and (min-width: 768px) {
+  main {
+    min-height: 100vh;
+    align-items: center;
+  }
+  .price-component {
+    width: 44.1%;
+    max-width: 710px;
+    min-width: 636px;
+    border-radius: 0.5rem;
+  }
+  .container {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+  }
+}
+/* ------------ component-top ------------ */
+.component-top {
+  background-color: #fff;
+  padding: 1.85rem 1.5rem 1.9rem;
+}
+
+.component-top .title {
+  color: var(--clr-cyan);
+  font-size: 1.225rem;
+  padding-bottom: 1.5rem;
+}
+
+.component-top .subtitle {
+  color: var(--clr-yellow);
+  font-weight: 700;
+  font-size: 0.915rem;
+  line-height: 1.37;
+  padding-bottom: 1rem;
+}
+
+.component-top .text {
+  color: var(--clr-neutral-blue-200);
+  font-size: 0.855rem;
+  line-height: 1.91;
+}
+
+@media screen and (min-width: 768px) {
+  .component-top {
+    grid-column: 1/3;
+    grid-row: 1/2;
+    padding: 2.55rem 2.5rem 2.5rem;
+  }
+  .component-top .title {
+    font-size: 1.475rem;
+    padding-bottom: 1.55rem;
+  }
+  .component-top .subtitle {
+    font-size: 1.1rem;
+    padding-bottom: 0.45rem;
+  }
+  .component-top .text {
+    font-size: 0.98rem;
+    line-height: 1.7;
+  }
+}
+/* ------------ component-bottom-left ------------ */
+
+.component-bottom-left {
+  background-color: var(--clr-cyan);
+  padding: 1.65rem 1.5rem 1.47rem;
+}
+
+.component-bottom-left .title {
+  font-size: 1.1rem;
+  padding-bottom: 0.85rem;
+  color: #fff;
+}
+.component-bottom-left .price-section {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+.component-bottom-left .price {
+  font-size: 1.955rem;
+  font-weight: 700;
+  color: #fff;
+}
+.component-bottom-left .price-tag {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.5);
+}
+.component-bottom-left .sub-title {
+  color: rgba(255, 255, 255, 80%);
+  font-size: 0.975rem;
+  padding-bottom: 1.7rem;
+}
+.component-bottom-left .signup-btn {
+  width: 100%;
+  background-color: var(--clr-yellow);
+  border: 0;
+  border-radius: 0.3rem;
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.95rem;
+  padding-block: 0.8rem;
+  box-shadow: 0 10px 15px rgba(20, 138, 136, 0.6);
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+@media screen and (min-width: 768px) {
+  .component-bottom-left {
+    padding: 2.6rem 2.5rem 2.5rem;
+  }
+  .component-bottom-left .signup-btn {
+    padding-block: 0.75rem;
+  }
+  .component-bottom-left .signup-btn:hover {
+    color: rgb(20, 138, 136);
+    transform: scale(1.02);
+  }
+}
+/* ------------ component-bottom-right ------------ */
+
+.component-bottom-right {
+  background-color: rgb(47, 189, 186);
+  color: #fff;
+  padding: 1.6rem 1.5rem 1.4rem;
+}
+.component-bottom-right .title {
+  font-size: 1.1rem;
+  padding-bottom: 1.15rem;
+}
+.component-bottom-right .list {
+  list-style-type: none;
+  padding-left: 0;
+  margin-bottom: 0;
+  font-size: 0.855rem;
+  line-height: 1.47;
+  color: rgba(255, 255, 255, 80%);
+}
+@media screen and (min-width: 768px) {
+  .component-bottom-right {
+    padding: 2.6rem 2.5rem 2.4rem;
+  }
+}
